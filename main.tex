@@ -27,6 +27,14 @@
 % Shortcuts
 
 % % Local to this project
+\newcommand{\RSP}{\mathbf{RSp}}
+\newcommand{\LRSP}{\mathbf{LRSp}}
+\newcommand{\AFF}{\mathbf{Aff}}
+\newcommand{\SCH}{\mathbf{Sch}}
+\renewcommand\labelitemi{--} % Changes itemize bullet to dash
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\open}{Open}
+\newcommand{\sh}{^{sh}}
 
 % % Misc
 \newcommand{\brkt}[1]{\left(#1\right)}
@@ -73,6 +81,7 @@
 \newcommand{\Om}{\Omega}
 
 % % Mathbb
+\newcommand{\A}{\mathbb{A}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -131,16 +140,17 @@
 \newcommand{\MOD}[1][R]{#1\text{-}\mathbf{Mod}}
 \newcommand{\VEC}[1][K]{#1\text{-}\mathbf{Vec}}
 \newcommand{\ALG}[1][R]{#1\text{-}\mathbf{Alg}}
-\newcommand{\PSH}[1]{\mathbf{PSh}\brkt{#1}}
+\newcommand{\PSH}{\mathbf{PSh}}
+\newcommand{\SH}{\mathbf{Sh}}
 \newcommand{\ORD}{\mathbf{Ord}}
 \newcommand{\POSET}{\mathbf{PoSet}}
 \newcommand{\id}[1]{\mathbbm{1}_{#1}}
-\newcommand{\map}[4]{#1 \yrightarrow[#4][2.5pt]{#3}[-1pt] #2}
+\newcommand{\map}[2]{\yrightarrow[#2][2.5pt]{#1}[-1pt]}
 \newcommand{\iso}[1][]{\cong_{#1}}
 \newcommand{\op}{^{op}}
 \newcommand{\darrow}{\downarrow}
-\newcommand{\LIM}[2]{\varprojlim_{#2}#1}
-\newcommand{\COLIM}[2]{\varinjlim_{#2}#1}
+\newcommand{\LIM}{\varprojlim}
+\newcommand{\COLIM}{\varinjlim}
 \DeclareMathOperator{\coker}{coker}
 \newcommand{\fall}[2]{\downarrow_{#1}^{#2}}
 \newcommand{\lift}[2]{\uparrow_{#1}^{#2}}
@@ -161,7 +171,7 @@
 \newcommand{\dsum}[2]{\sum_{#1}^{#2}}
 \newcommand{\dprod}[2]{\prod_{#1}^{#2}}
 \newcommand{\del}[2]{\frac{\partial#1}{\partial#2}}
-\newcommand\res[2]{{% we make the whole thing an ordinary symbol
+\newcommand{\res}[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   #1 % the function
   %\vphantom{\big|} % pretend it's a little taller at normal size
@@ -277,7 +287,7 @@
 \newmdtheoremenv[
     linewidth = 2pt,
     leftmargin = 20pt,
-    rightmargin = 20pt,
+    rightmargin = 0pt,
     linecolor = darkgrey,
     topline = false,
     bottomline = false,
@@ -287,7 +297,7 @@
 \newmdtheoremenv[
     linewidth = 2 pt,
     leftmargin = 20pt,
-    rightmargin = 20pt,
+    rightmargin = 0pt,
     linecolor = darkgrey,
     topline = false,
     bottomline = false,
@@ -297,7 +307,7 @@
 \newmdtheoremenv[
     linewidth = 2 pt,
     leftmargin = 20pt,
-    rightmargin = 20pt,
+    rightmargin = 0pt,
     linecolor = darkgrey,
     topline = false,
     bottomline = false,
@@ -309,7 +319,7 @@
 \newmdtheoremenv[
     linewidth = 0.7 pt,
     leftmargin = 20pt,
-    rightmargin = 20pt,
+    rightmargin = 0pt,
     linecolor = darkgrey,
     topline = false,
     bottomline = false,
@@ -321,7 +331,7 @@
 \newmdtheoremenv[
     linewidth = 0.7 pt,
     leftmargin = 20pt,
-    rightmargin = 20pt,
+    rightmargin = 0pt,
     linecolor = darkgrey,
     topline = false,
     bottomline = false,
@@ -331,6 +341,12 @@
 
 \theoremstyle{remarkstyle}
 \newtheorem{rmk}{Remark}
+
+\newenvironment{idea}{
+  \begin{proof}[Idea]
+}{
+  \end{proof}
+} % Environment for ideas of proofs. 
 
 % % tikzcd diagram 
 \newenvironment{cd}{
