@@ -27,14 +27,7 @@
 % Shortcuts
 
 % % Local to this project
-\newcommand{\RSP}{\mathbf{RSp}}
-\newcommand{\LRSP}{\mathbf{LRSp}}
-\newcommand{\AFF}{\mathbf{Aff}}
-\newcommand{\SCH}{\mathbf{Sch}}
 \renewcommand\labelitemi{--} % Changes itemize bullet to dash
-\DeclareMathOperator{\spec}{Spec}
-\DeclareMathOperator{\open}{Open}
-\newcommand{\sh}{^{sh}}
 
 % % Misc
 \newcommand{\brkt}[1]{\left(#1\right)}
@@ -58,8 +51,12 @@
 \newcommand{\minus}{\setminus}
 \newcommand{\subs}{\subseteq}
 \newcommand{\ssubs}{\subsetneq}
+\newcommand{\sups}{\supseteq}
+\newcommand{\ssups}{\supset}
 \DeclareMathOperator{\im}{Im}
 \newcommand{\nothing}{\varnothing}
+\DeclareMathOperator{\join}{\sqcup}
+\DeclareMathOperator{\meet}{\sqcap}
 
 % % Greek 
 \newcommand{\al}{\alpha}
@@ -82,15 +79,16 @@
 
 % % Mathbb
 \newcommand{\A}{\mathbb{A}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
-\newcommand{\bP}{\mathbb{P}}
-\newcommand{\V}{\mathbb{V}}
+\newcommand{\G}{\mathbb{G}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Z}{\mathbb{Z}}
 
 % % Mathcal
 \newcommand{\BB}{\mathcal{B}}
@@ -133,6 +131,7 @@
 \newcommand{\CAT}{\mathbf{Cat}}
 \newcommand{\SET}{\mathbf{Set}}
 \newcommand{\TOP}{\mathbf{Top}}
+\newcommand{\MON}{\mathbf{Mon}}
 \newcommand{\GRP}{\mathbf{Grp}}
 \newcommand{\AB}{\mathbf{Ab}}
 \newcommand{\RING}{\mathbf{Ring}}
@@ -159,6 +158,7 @@
 \newcommand{\nsub}{\trianglelefteq}
 \newcommand{\inv}{^{-1}}
 \newcommand{\dvd}{\,|\,}
+\DeclareMathOperator{\ev}{ev}
 
 % % Analysis
 \newcommand{\abs}[1]{\left\vert #1 \right\vert}
@@ -374,8 +374,7 @@
 \date{Date}
 \maketitle
 
-\tableofcontents
-
+\input{contents.tex}
 %\printbibliography
 
 \end{document}
