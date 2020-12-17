@@ -10,6 +10,7 @@
 \usepackage{mathrsfs} % Fancy font
 \usepackage{bbm} % mathbb numerals
 \usepackage{tikz, tikz-cd, float} % Commutative Diagrams
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{perpage}
 \usepackage{parskip} % So that paragraphs look nice
 \usepackage{ifthen,xargs} % For defining better commands
@@ -17,6 +18,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tgpagella}
 \usepackage{cancel}
+\usepackage{graphicx}
 
 % Bibliography
 \usepackage{url}
@@ -27,7 +29,13 @@
 % Shortcuts
 
 % % Local to this project
+\DeclareMathOperator{\spec}{Spec}
+\newcommand{\LRSP}{\mathbf{LRSp}}
 \renewcommand\labelitemi{--} % Changes itemize bullet to dash
+\DeclareMathOperator{\ideal}{Ideal}
+\newcommand{\AFFVAR}{\mathbf{AffVar}}
+\newcommand{\SCH}{\mathbf{Sch}}
+\newcommand{\MFD}{\mathbf{Mfd}}
 
 % % Misc
 \newcommand{\brkt}[1]{\left(#1\right)}
@@ -64,6 +72,7 @@
 \newcommand{\ga}{\gamma}
 \newcommand{\de}{\delta}
 \newcommand{\ep}{\varepsilon}
+\newcommand{\ph}{\varphi}
 \newcommand{\io}{\iota}
 \newcommand{\ka}{\kappa}
 \newcommand{\la}{\lambda}
@@ -136,16 +145,16 @@
 \newcommand{\AB}{\mathbf{Ab}}
 \newcommand{\RING}{\mathbf{Ring}}
 \newcommand{\CRING}{\mathbf{CRing}}
-\newcommand{\MOD}[1][R]{#1\text{-}\mathbf{Mod}}
-\newcommand{\VEC}[1][K]{#1\text{-}\mathbf{Vec}}
-\newcommand{\ALG}[1][R]{#1\text{-}\mathbf{Alg}}
+\newcommand{\MOD}{\mathbf{Mod}}
+\newcommand{\VEC}{\mathbf{Vec}}
+\newcommand{\ALG}{\mathbf{Alg}}
 \newcommand{\PSH}{\mathbf{PSh}}
 \newcommand{\SH}{\mathbf{Sh}}
 \newcommand{\ORD}{\mathbf{Ord}}
 \newcommand{\POSET}{\mathbf{PoSet}}
 \newcommand{\id}[1]{\mathbbm{1}_{#1}}
 \newcommand{\map}[2]{\yrightarrow[#2][2.5pt]{#1}[-1pt]}
-\newcommand{\iso}[1][]{\cong_{#1}}
+\newcommand{\iso}{\cong}
 \newcommand{\op}{^{op}}
 \newcommand{\darrow}{\downarrow}
 \newcommand{\LIM}{\varprojlim}
@@ -179,7 +188,7 @@
   }}
 
 % % Galois
-\newcommand{\Gal}[2]{\mathrm{Gal}_{#1}(#2)}
+\DeclareMathOperator{\gal}{Gal}
 \DeclareMathOperator{\Orb}{Orb}
 \DeclareMathOperator{\Stab}{Stab}
 \newcommand{\emb}[3]{\mathrm{Emb}_{#1}(#2, #3)}
@@ -305,6 +314,16 @@
     footnoteinside = true
 ]{prop}{Proposition}
 \newmdtheoremenv[
+    linewidth = 0.7 pt,
+    leftmargin = 20pt,
+    rightmargin = 0pt,
+    linecolor = darkgrey,
+    topline = false,
+    bottomline = false,
+    rightline = false,
+    footnoteinside = true
+]{lem}{Lemma}
+\newmdtheoremenv[
     linewidth = 2 pt,
     leftmargin = 20pt,
     rightmargin = 0pt,
@@ -326,6 +345,7 @@
     rightline = false,
     footnoteinside = true
 ]{ex}{Exercise}
+
 
 \theoremstyle{examplestyle}
 \newmdtheoremenv[
@@ -367,11 +387,11 @@
       edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
   }
 }
-
 \begin{document}
-\title{Notes on \dots}
+
+\title{Schemes : The Manifolds of Algebraic Geometry}
 \author{Ken Lee}
-\date{Date}
+\date{November 2020}
 \maketitle
 
 \input{contents.tex}
